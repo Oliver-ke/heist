@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+            integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+            crossorigin="anonymous"
+        >
+        <title>World - Forecast</title>
+    </head>
+    <body>
+        <header class="the_header">
+            <div class="brand">
+                <h3>
+                    <span>🗺️</span> World Fore<span>ca</span>st 
+                </h3>
+            </div>
+        </header>
+        <main>
+            <section class="index active">
+                <form>
+                    <div class="indicator">
+                        <div class="spinner"></div>
+                        <span class="error"></span>
+                    </div>
+                    <div class="holder">
+                        <label for="location">Travel Location</label>
+                        <input type="text" id="location" placeholder="enter your travel location here">
+                    </div>
+                    <div class="holder">
+                        <label for="location">Arrival Date</label>
+                        <input type="date" id="arrDate">
+                    </div>
+                    <div class="holder">
+                        <label for="location">Return Date</label>
+                        <input type="date" id="retDate">
+                    </div>
+                    <input
+                        type="submit"
+                        value="Get location Info"
+                        onclick=""
+                        onsubmit=""
+                    >
+                </form>
+            </section>
+            <section class="trip-detail">
+                <div class="wrapper">
+                    <div class="trip-container">
+                        <div class="navigation-container">
+                            <button class="save-trip">Save Trip</button>
+                            <button class="new-trip">Check a New Trip</button>
+                            <button class="view-trip">My Saved trips</button>
+                        </div>
+                        <h3>Your Trip Information</h3>
+                        <div class="country-info"></div>
+                        <div class="location-img"></div>
+                        <h3>Your Location Forcast</h3>
+                        <div class="weather-info"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="users-saved-trips">
+                <button class="new-trip-onsaved btn">Check a New Trip</button>
+                <h3>Your Saved Trips</h3>
+                <div class="trip-items">
+                    <div class="trip-item"></div>
+                </div>
+            </section>
+        </main>
+        <script>
+            // check if service worker is supported in browser
+            if ('serviceWorker' in navigator) {
+                // register a service worker
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>

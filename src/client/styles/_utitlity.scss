@@ -1,0 +1,56 @@
+// utility classes for indicators
+
+.indicator {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	.spinner {
+		width: 2rem;
+		height: 2rem;
+		border: 3px solid rgba(0, 0, 0, .25);
+		border-top-color: rgba(255, 255, 255, .5);
+		border-radius: 50%;
+		animation: rotation .8s ease infinite;
+		margin-bottom: 1rem;
+		display: none;
+		&.show-spinner {
+			display: block;
+		}
+	}
+	span {
+		color: red;
+		display: none;
+		&.show-error {
+			display: block;
+		}
+	}
+}
+
+.btn {
+	display: inline-block;
+	border: 0;
+	background: $secondary-color;
+	color: #fff;
+	border-radius: 5px;
+	padding: 15px 30px;
+	margin-right: 2rem;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 10px;
+	&:hover {
+		transform: scale(0.98);
+	}
+	&.danger {
+		color: #ccc;
+	}
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
